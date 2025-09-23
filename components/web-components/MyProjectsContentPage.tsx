@@ -37,7 +37,7 @@ export const MyProjectsContentPage = () => {
         title: 'LPADILLA Project',
         position: 'flex-end',
         content: 'Static site generator created with Next.js, React, Chakra-UI and Three.Js, a 3D dynamic library.',
-        link:'URL_WEB_VERCEL',
+        link:'https://github.com/Lucaso1424/portfolio-lucas-padilla',
         img: '/images/favicon.ico',
         alt: 'LPADILLA Project'
     };
