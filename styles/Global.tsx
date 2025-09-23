@@ -1,6 +1,6 @@
 export const GlobalCSS = {
     'html': {
-      scrollBehavior: 'smooth!important'
+      scrollBehavior: 'smooth!'
     },
     '.htmlScreen iframe': {
         width: '1385px',

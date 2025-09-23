@@ -1,13 +1,12 @@
 import { Box, Text, Flex, Img } from './ChakraElements'
 import { ArrowDownIcon } from './SocialIcons'
 import NextLink from 'next/link'
-import PortfolioNav from './PortfolioNav'
 import SocialButtons from './SocialButtons'
 
 export const TitleSection = ({height}: {height: any}) => {
     return(
         <Flex 
-            w={['90%','100%']}
+            w={['100%','100%']}
             h={[height,'$100vh']}
             top={['14rem','7rem']}
             as='section' 
@@ -18,13 +17,14 @@ export const TitleSection = ({height}: {height: any}) => {
             position='relative'>
             <Img
                 borderRadius='full'
-                boxSize={['12rem','8.5rem']}
+                boxSize={['8rem','8.2rem']}
                 src='/favicon.ico'
                 alt='LPADILLA Project'/>
-            <Box mt={['2rem','1rem']}>
+            <Box mt={['3rem','1rem']}>
                 <Text
                     as='h1'
                     fontFamily='Arial'
+                    mt={'2rem'}
                     fontSize={['10.6vmin','6.6vmin']}
                     color='white'
                     align='center'>
@@ -32,22 +32,16 @@ export const TitleSection = ({height}: {height: any}) => {
                 </Text>
                 <Text
                     as='h2'
-                    fontSize={['7.8vmin','3.4vmin']}
+                    fontSize={['8vmin','3.4vmin']}
                     fontFamily='Arial'
                     color='white'
                     align='center'
-                    mt={['1rem','0rem']}>
+                    mt={['3rem','0rem']}>
                     Software Engineer
                 </Text>
             </Box>
             <Box mt='3rem' alignContent={'center'}>
-                <PortfolioNav direction={"row"} />
                 <SocialButtons />
-            </Box>
-            <Box mt={['8rem','6.5rem']}>
-                <NextLink href="#first-section" > 
-                    <ArrowDownIcon fontSize='1.5rem' style={{cursor: 'pointer', color: '#C8F9FF'}} />
-                </NextLink>
             </Box>
         </Flex>
     )

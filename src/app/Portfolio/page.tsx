@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
     Box,
@@ -13,12 +13,13 @@ import useWindowDimensions from '../../../components/web-components/WebDimension
 import { Navbar } from '../../../components/web-components/NavBar';
 
 export default function Portfolio() {
-    
     var { width, height } = useWindowDimensions();
+    if (!width) width = 100;
+    if (!height) height = 100;
     return(
         <Box bgColor='#111618' >
             <Box display={['block','none']}>
-                 <Navbar height={''} width={''} top={'55rem'} darkMode={'true'} />
+                 <Navbar height={height.toString()} width={width?.toString()} top={'55rem'} darkMode='100'/>
             </Box>
             <TitleSection height={height} />
             <Flex 
@@ -53,7 +54,7 @@ export default function Portfolio() {
                         borderRadius='lg'
                         mt='3rem'
                         mx='auto'
-                        boxSize={['20rem']}
+                        boxSize={['19rem']}
                         src='/images/about-me/lucas.jpg'/>
                 </Box>
             </Flex>
@@ -66,20 +67,19 @@ export default function Portfolio() {
                 direction='column'
                 justify='star'
                 id='third-section'>
-                <Box mx={['auto','15rem']} my='4rem' mb='2rem'>
-                    <Text
-                        as='h2'
-                        fontSize={['8.7vmin','4.7vmin']}
-                        color='white'
-                        align='left'>
-                        Skills
-                    </Text>
-                </Box>
                 <Box 
                     mx={['2rem','14rem']} 
                     h='100%'
                     my='1rem'
                     alignContent='center'>
+                    <Text
+                        as='h2'
+                        fontSize={['8.7vmin','4.7vmin']}
+                        color='white'
+                        mt={'4rem'}
+                        align='center'>
+                        Skills
+                    </Text>
                     <SkillSquare />                  
                 </Box>
             </Flex>

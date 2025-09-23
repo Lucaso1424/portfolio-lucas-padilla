@@ -11,9 +11,9 @@ const SocialButtons = () => {
                     color='cyan.700'
                     _hover={{ bgColor: 'cyan.300' }}
                     size='xxl'
-                    fontSize={['4.7rem', '2.7rem']}
+                    fontSize={['5rem', '3rem']}
                     icon={<LinkedinIcon />}
-                    mr='1rem' 
+                    mr='2rem' 
                     aria-label={''} />
             </a>
             <a href="https://github.com/Lucaso1424" rel="noreferrer" target="_blank">
@@ -22,7 +22,7 @@ const SocialButtons = () => {
                     colorScheme='red'
                     color='red.700'
                     size='xxl'
-                    fontSize={['4.7rem', '2.7rem']}
+                    fontSize={['5rem', '3rem']}
                     _hover={{ bgColor: 'red.200' }}
                     icon={<GithubIcon />} 
                     aria-label={''}/>

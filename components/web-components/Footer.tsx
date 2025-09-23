@@ -5,7 +5,7 @@ import { GithubIcon,LinkedinIcon } from "./SocialIcons"
 export const Footer = () => {
     const bgColor = {
         backgroundColor: '#1e1a20'
-    }
+    };
     return (
         <div style={bgColor}>
             <Divider />
@@ -17,7 +17,7 @@ export const Footer = () => {
                         borderRadius='lg'
                         />
                     </Box>
-                    <Text as='i' fontSize={'sm'}>LPadilla Project {(new Date().getFullYear())}. </Text>
+                    <Text as='i' fontSize={'sm'}>LPadilla Project {(new Date().getFullYear())}.</Text>
                     <Text as='i' fontSize={'sm'}>All Rights Reserved.</Text>
                 </Box>
                 <Box minHeight={['9rem','9rem']} m={['auto',0]} mt={['0','2rem']}>
@@ -25,7 +25,7 @@ export const Footer = () => {
                     <UnorderedList>
                         <ListItem><Link className='link' href='/'>Home</Link></ListItem>
                         <ListItem><Link className='link' href='/MyProjects'>My Projects</Link></ListItem>
-                        <ListItem><Link className='link' href='/Contact'>Contact</Link></ListItem>
+                        <ListItem><Link className='link' href='/AboutMe'>Contact</Link></ListItem>
                     </UnorderedList>
                 </Box>
                 <Box minHeight={['9rem','9rem']} m={['auto',0]} mt={['0','2rem']}>

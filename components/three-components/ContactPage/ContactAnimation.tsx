@@ -5,7 +5,6 @@ import { useRef } from "react";
 import * as THREE from "three";
 
 export const ContactAnimation = () => {
-  const pc_desktop_set = useLoader(GLTFLoader, '/models/pc_desktop_set.glb');
   const desktop = useLoader(GLTFLoader, '/models/gaming_desktop_pc.glb');
   const chair = useLoader(GLTFLoader, '/models/red_gaming_chair.glb');
 
@@ -16,13 +15,13 @@ export const ContactAnimation = () => {
       if(camera.position.z > 4.5){
         camera.position.z -= (clock.elapsedTime * 0.01);
       }
-    })
+    });
     return null;
   }
 
   return(
-      <group rotation={[0,1.55,0]} scale={[2, 2, 2]}>
-        <ambientLight intensity={0.5} />
+      <group rotation={[0, 1.55, 0]} scale={[2, 2, 2]}>
+        <ambientLight intensity={1.2} />
 
         <directionalLight
           ref={dirLightRef}
@@ -34,19 +33,19 @@ export const ContactAnimation = () => {
         <pointLight color={"#F5B5B1"} position={[0, 2, -5]} intensity={1.5} />
         <pointLight color={"#F2E7CB"} position={[-2, 3, 2]} intensity={1} />
 
-        <primitive object={desktop.scene} scale={0.22} position={[1, 0.05, 0]} rotation={[0, -Math.PI, 0]}>
+        <primitive object={desktop.scene} scale={0.22} position={[0.72, 0.005, 0]} rotation={[0, -Math.PI, 0]}>
           <Html
             transform
             rotation={[0, Math.PI / 2, 0]}
             wrapperClass="htmlScreen"
             distanceFactor={1}             
-            position={[0.48, 3.14, 3.02]}  
+            position={[0.29, 3.18, 3.02]}  
             scale={[2, 2, 5]}  >
-            <iframe src="/Portfolio" width="1130" height="596" />
+            <iframe src="/Portfolio" width="1127" height="592" />
           </Html>
         </primitive>
 
-        <primitive object={chair.scene} scale={1} position={[-0.2, -0.5, 0.5]} rotation={[0, Math.PI, 0]}/>
+        <primitive object={chair.scene} scale={1} position={[-0.31, -0.6, 0.4]} rotation={[0, Math.PI, 0]}/>
         <UpdateCamera />
       </group>
   )

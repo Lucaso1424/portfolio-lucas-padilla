@@ -9,7 +9,7 @@ import {
   IconButton,
   Box
 } from './ChakraElements';
-import { HamburgerIcon, CloseIcon, MoonIcon } from './SocialIcons';
+import { HamburgerIcon, CloseIcon } from './SocialIcons';
 import NextLink from 'next/link';
 
 
@@ -83,9 +83,6 @@ export const Navbar = ({height, width, top, darkMode}: {height: string, width: s
           mr='2'
           mt='0.85rem'
           display={['none', 'none', vdarkMode, vdarkMode]}/>
-        <Box mt='0.95rem' display={['none', 'none', 'flex', 'flex']} >
-          <MoonIcon  />
-        </Box>
         </Flex>
         {/* Mobile */}
         <IconButton
@@ -152,7 +149,7 @@ export const Navbar = ({height, width, top, darkMode}: {height: string, width: s
             </Button>
           </NextLink>
 
-          <NextLink href="/Contact" passHref>
+          <NextLink href="/AboutMe" passHref>
             <Button
               variant="outline"
               aria-label="Contact"
@@ -162,15 +159,6 @@ export const Navbar = ({height, width, top, darkMode}: {height: string, width: s
               Contact
             </Button>
           </NextLink>
-          <Flex>
-            <Switch
-            color="green"
-            isChecked={isDark}
-            onChange={toggleColorMode}
-            mr='2'
-            />
-            <MoonIcon />
-          </Flex>
         </Flex>
       </Flex>
     </Flex>

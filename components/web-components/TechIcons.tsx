@@ -2,7 +2,7 @@ export {
     SiNextdotjs as NextJsIcon,
     SiJavascript as JsIcon,
     SiReact as ReactIcon,
-    SiCnet as CNetIcon,
+    SiDotnet as CNetIcon,
     SiGnubash as BashIcon,
     SiDocker as DockerIcon,
     SiHtml5 as HtmlIcon,
@@ -10,5 +10,6 @@ export {
     SiMysql as SqlIcon,
     SiGit as GitIcon,
     SiUnity as UnityIcon,
-    SiAngular as AngularIcon
+    SiAngular as AngularIcon,
+    SiPrimefaces as PrimeFacesIcon
 } from 'react-icons/si'
