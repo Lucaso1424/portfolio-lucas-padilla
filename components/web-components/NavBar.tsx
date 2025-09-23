@@ -63,14 +63,14 @@ export const Navbar = ({height, width, top, darkMode}: {height: string, width: s
               aria-label="MyProjects"
               my={1}
               minW={14}>
-              My Projects
+              Projects
             </Button>
           </NextLink>
 
-          <NextLink href="/Contact" passHref>
+          <NextLink href="/AboutMe" passHref>
             <Button
               variant="ghost"
-              aria-label="Contact"
+              aria-label="About Me"
               my={1}
               minW={14}>
               Contact

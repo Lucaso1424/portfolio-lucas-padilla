@@ -20,7 +20,7 @@ export const ScrollAnimationR3F = () => {
       const scene = gltf.scene.clone(true)
       setGeometry(scene);
     }
-    const primitiveProps = {
+    const primitiveProps: any = {
       object: geometry,
       position: position,
       scale: scale,
@@ -35,7 +35,6 @@ export const ScrollAnimationR3F = () => {
 
   useEffect(() => {
     let scrollY = window.scrollY;
-    let currentSection = 0;
 
     window.addEventListener('scroll', () => {
         scrollY = window.scrollY;
@@ -49,7 +48,7 @@ export const ScrollAnimationR3F = () => {
       mesh2.current.rotation.y -= -0.005;
       mesh3.current.rotation.y -= -0.005;
       mesh4.current.rotation.y -= -0.005;
-      lightRef.current.intensity = Math.max(0.3, 
+      lightRef.current.intensity = Math.max(3, 
         Math.min(
           Math.abs(
             Math.cos(clock.elapsedTime * 0.5)), 
@@ -62,7 +61,7 @@ export const ScrollAnimationR3F = () => {
   return(
     <group>
         <ambientLight ref={lightRef} />
-        <Sparkles count={1500} scale={6 * 6} size={6} speed={0.4} />
+        <Sparkles count={1500} scale={8 * 8} size={6} speed={0.5} />
         <group 
           ref={mesh1}
           scale={[0.1,0.1,0.1]}

@@ -18,7 +18,7 @@ export const MyProjectsContentPage = () => {
     const secondCard = {
         title: 'ERP Java, Spring Boot',
         position: 'flex-end',
-        content: 'Web-based business management software with a sales module created with Java, Spring Boot, Hibernate and Thymeleaf.',
+        content: 'ERP (enterprise resource planning) business management software with a sales module created with Java, Spring Boot, Hibernate and Thymeleaf.',
         link:'https://github.com/Lucaso1424/SALES_4_US',
         img: '/images/sales_4_us.png',
         alt: 'Sales 4 US'

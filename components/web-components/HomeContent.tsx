@@ -19,7 +19,7 @@ export const HomeContent = () => {
               position='fixed'
               w='100%'
               mt={['45vh','50vh']}>
-              <Link href="/contact">
+              <Link href="/AboutMe">
                   <HomeButton title='About me' />
               </Link>
               <Link href="/MyProjects">
