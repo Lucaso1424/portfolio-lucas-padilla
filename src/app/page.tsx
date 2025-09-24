@@ -6,14 +6,7 @@ import { Box } from "../../components/web-components/ChakraElements";
 import { Canvas } from "@react-three/fiber";
 import HomeContent from "../../components/web-components/HomeContent";
 import EnergyCore from "../../components/three-components/EnergyCore/EnergyCore";
-import localFont from "next/font/local";
-
-export const jorelFont = localFont({
-  src: "../fonts/JorelMinesweeperPlus-Regular.otf",
-  display: "swap",
-  variable: "--font-jorel",
-});
-
+import { jorelFont } from "../fonts/jorel";
 
 export default function Home() {
   const { width, height } = useWindowDimensions();

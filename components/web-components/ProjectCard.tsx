@@ -2,7 +2,7 @@ import { Box,Text,Image, Flex, Button } from './ChakraElements'
 import { CodeIcon } from './SocialIcons';
 import NextLink from 'next/link';
 import useWindowDimensions from './WebDimensions';
-import { jorelFont } from "../../src/app/page"; 
+import { jorelFont } from '@/fonts/jorel';
 
 const ProjectCard = ({data}: {data: any}) => {
     const { width = 0, height = 0 } = useWindowDimensions();

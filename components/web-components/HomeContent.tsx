@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Box, Text } from './ChakraElements'
 import HomeButton from './HomeButton';
-import { jorelFont } from "../../src/app/page"; 
+import { jorelFont } from '@/fonts/jorel';
 
 export const HomeContent = () => {
     return (
