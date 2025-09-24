@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LPADILLA Project
+![Demo-Image](public/images/demo_lpadilla_project.png?raw=true)
+## Develop with
+- Next.js v15.5.3
+- Three.Js
+- Chakra-UI
 
 ## Getting Started
 

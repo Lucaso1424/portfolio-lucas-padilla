@@ -21,7 +21,6 @@ export {
     ListItem,
     ListIcon,
     Tag,
-    // TableHeader as Th,
     Input,
     InputGroup,
     Textarea,

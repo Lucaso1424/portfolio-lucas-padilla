@@ -65,7 +65,7 @@ export const PointShaderMaterial = {
         gl_FragColor = vec4(vec3(color), 1.0);
     }
     `
-  }
+};
 
 export const Stars = () => {
   const startTime = Date.now();
