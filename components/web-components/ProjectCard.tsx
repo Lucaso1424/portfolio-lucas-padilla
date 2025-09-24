@@ -5,8 +5,7 @@ import useWindowDimensions from './WebDimensions';
 import { jorelFont } from "../../src/app/page"; 
 
 const ProjectCard = ({data}: {data: any}) => {
-    let { width, height } = useWindowDimensions();
-    if (!height) height = 100; 
+    const { width = 0, height = 0 } = useWindowDimensions();
     return (
         <Flex h={[height/1.2,'100vh']} justifyContent={data.position} >
             <Box

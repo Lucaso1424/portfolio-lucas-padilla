@@ -15,17 +15,23 @@ export const ScrollAnimationR3F = () => {
   };
 
   const Model3D = ({ position, rotation, scale, route }: Model3DProps) => {
-    const gltf = useLoader(GLTFLoader, `${route}`), [geometry, setGeometry] = useState<THREE.Group | null>(null);
+    const gltf = useLoader(GLTFLoader, `${route}`);
+    const [geometry, setGeometry] = useState<THREE.Group | null>(null);
+
     if (!geometry) {
       const scene = gltf.scene.clone(true)
       setGeometry(scene);
     }
-    const primitiveProps: any = {
-      object: geometry,
-      position: position,
-      scale: scale,
-    }; 
-    return <primitive object={primitiveProps.object!} position={primitiveProps.position} scale={primitiveProps.scale} />
+
+    if (!geometry) return null;
+
+    return (
+      <primitive 
+        object={geometry} 
+        position={position} 
+        scale={scale} 
+        rotation={rotation} />
+    );  
   };
 
   const objectsDistance = 4;

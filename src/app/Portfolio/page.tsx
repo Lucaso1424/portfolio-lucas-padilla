@@ -13,9 +13,7 @@ import useWindowDimensions from '../../../components/web-components/WebDimension
 import { Navbar } from '../../../components/web-components/NavBar';
 
 export default function Portfolio() {
-    var { width, height } = useWindowDimensions();
-    if (!width) width = 100;
-    if (!height) height = 100;
+    const { width = 0, height = 0 } = useWindowDimensions();
     return(
         <Box bgColor='#111618' >
             <Box display={['block','none']}>

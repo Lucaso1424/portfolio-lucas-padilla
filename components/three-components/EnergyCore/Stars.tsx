@@ -67,24 +67,38 @@ export const PointShaderMaterial = {
     `
 };
 
+type StarParameters = {
+  count: number;
+  size: number;
+  radius: number;
+  branches: number;
+  spin: number;
+  randomness: number;
+  randomnessPower: number;
+  insideColor: string;
+  outsideColor: string;
+};
+
 export const Stars = () => {
   const startTime = Date.now();
   const ref = useRef<THREE.Mesh>(null);
   
   let current = startTime;
   let elapsed = 0;
-  let parameters: any = {};
-  parameters.count = 10000;
-  parameters.size = 7;
-  parameters.radius = 5;
-  parameters.branches = 3;
-  parameters.spin = 1;
-  parameters.randomness = 0.5;
-  parameters.randomnessPower = 3;
-  parameters.insideColor = '#ffffff';
-  parameters.outsideColor = '#BF40BF';
 
-  const geometry = new THREE.BufferGeometry()
+  const parameters: StarParameters = {
+    count: 10000,
+    size: 7,
+    radius: 5,
+    branches: 3,
+    spin: 1,
+    randomness: 0.5,
+    randomnessPower: 3,
+    insideColor: '#ffffff',
+    outsideColor: '#BF40BF'
+  };
+
+  const geometry = new THREE.BufferGeometry();
   let positions = new Float32Array(parameters.count * 3);
   let colors = new Float32Array(parameters.count * 3);
   let scales = new Float32Array(parameters.count * 1);
@@ -107,7 +121,7 @@ export const Stars = () => {
 
     colors[i2    ] = mixedColor.r;
     colors[i3 + 1] = mixedColor.g;
-    colors[i2 + 3] = mixedColor.b;
+    colors[i3 + 2] = mixedColor.b;
 
     scales[i] = Math.random();
 }
