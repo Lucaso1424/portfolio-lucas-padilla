@@ -22,7 +22,7 @@ export default function Home() {
       <Head>
         <title>Lucas Padilla - Software Engineer</title>
         <meta name="description" content="LPADILLA Project" />
-        <link rel="ico" href="./favicon.ico" />
+        <link rel="icon" href="./favicon.ico" />
       </Head>
       <Box position='relative' height={'100vh'} bg='black'  className={jorelFont.className}>
         <Canvas camera={{ fov: 45, near: 0.1, far: 100, position: [0, 0, 13] }} >

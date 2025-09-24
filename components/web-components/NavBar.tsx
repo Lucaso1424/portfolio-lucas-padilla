@@ -73,7 +73,7 @@ export const Navbar = ({height, width, top, darkMode}: {height: string, width: s
               aria-label="About Me"
               my={1}
               minW={14}>
-              Contact
+              About Me
             </Button>
           </NextLink>
           <Switch
@@ -156,7 +156,7 @@ export const Navbar = ({height, width, top, darkMode}: {height: string, width: s
               my={5}
               w="100%"
               colorScheme='white'>
-              Contact
+              About Me
             </Button>
           </NextLink>
         </Flex>

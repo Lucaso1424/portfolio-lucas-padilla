@@ -25,7 +25,7 @@ export const Footer = () => {
                     <UnorderedList>
                         <ListItem><Link className='link' href='/'>Home</Link></ListItem>
                         <ListItem><Link className='link' href='/MyProjects'>My Projects</Link></ListItem>
-                        <ListItem><Link className='link' href='/AboutMe'>Contact</Link></ListItem>
+                        <ListItem><Link className='link' href='/AboutMe'>About Me</Link></ListItem>
                     </UnorderedList>
                 </Box>
                 <Box minHeight={['9rem','9rem']} m={['auto',0]} mt={['0','2rem']}>
