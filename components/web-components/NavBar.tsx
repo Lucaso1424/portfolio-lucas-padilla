@@ -49,7 +49,7 @@ export const Navbar = ({height, width, top, darkMode}: {height: string, width: s
         >
           <NextLink href="/" passHref>
             <Button
-              variant="ghost"
+              variant="white"
               aria-label="Home"
               my={1}
               minW={14}>
@@ -59,7 +59,7 @@ export const Navbar = ({height, width, top, darkMode}: {height: string, width: s
 
           <NextLink href="/MyProjects" passHref>
             <Button
-              variant="ghost"
+              variant="white"
               aria-label="MyProjects"
               my={1}
               minW={14}>
@@ -69,7 +69,7 @@ export const Navbar = ({height, width, top, darkMode}: {height: string, width: s
 
           <NextLink href="/AboutMe" passHref>
             <Button
-              variant="ghost"
+              variant="white"
               aria-label="About Me"
               my={1}
               minW={14}>
