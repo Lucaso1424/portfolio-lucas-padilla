@@ -1,7 +1,7 @@
 # LPADILLA Project
 ![Demo-Image](public/images/demo_lpadilla_project.png?raw=true)
-## Develop with
-- Next.js v15.5.3
+## Developed with
+- Next.js (v15.5.3)
 - Three.Js
 - Chakra-UI
 
