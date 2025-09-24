@@ -1,28 +1,29 @@
 "use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import {
   useColorMode,
   Switch,
   Flex,
   Button,
   IconButton,
-  Box
-} from './ChakraElements';
-import { HamburgerIcon, CloseIcon } from './SocialIcons';
-import NextLink from 'next/link';
+  Box,
+} from "./ChakraElements";
+import { HamburgerIcon, CloseIcon } from "./SocialIcons";
+import NextLink from "next/link";
+import { usePathname } from "next/navigation";
 
+export const Navbar = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const isDark = colorMode === "dark";
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
-export const Navbar = ({height, width, top, darkMode}: {height: string, width: string, top: string, darkMode: string}) => {
-  const vheight = height || '100vh'
-  const vwidth = width || '100vw'
-  const vtop = top || '38rem'
-  const vdarkMode = darkMode || 'none'
   const handleClick = () => {
     toggleColorMode();
-    const styleEl = document.createElement('style');
+    const styleEl = document.createElement("style");
     const cssText = document.createTextNode(
-      'html * { transition: color, background-color 0.3s ease-out!important }',
+      "html * { transition: color, background-color 0.3s ease-out!important }"
     );
     styleEl.appendChild(cssText);
     document.head.appendChild(styleEl);
@@ -30,137 +31,133 @@ export const Navbar = ({height, width, top, darkMode}: {height: string, width: s
       document.head.removeChild(styleEl);
     }, 300);
   };
-  const { colorMode, toggleColorMode } = useColorMode()
-  const isDark = colorMode === 'dark'
-  const [display, changeDisplay] = useState('none')
+
+  const handleNavClick = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
-    <Flex>
-      <Flex
-        mx={[0, 'auto']}
-        position={["fixed", "relative"]}
-        top={[vtop, "1rem"]}
-        right="1rem"
-        align="center"
-        zIndex='10'
-      >
-        {/* Desktop */}
-        <Flex
-          display={['none', 'flex', 'flex','flex']}
+    <Flex
+      as="nav"
+      align="center"
+      justify="space-between"
+      px={{ base: 4, md: 10 }}
+      py={3}
+      position="sticky"
+      top="0"
+      bg={isDark ? "gray.900" : "white"}
+      zIndex="100"
+      shadow="md"
+    >
+      <NextLink href="/" passHref>
+        <Button
+          variant="ghost"
+          fontWeight="bold"
+          fontSize="lg"
+          onClick={handleNavClick}
+        >
+          LPADILLA Project
+        </Button>
+      </NextLink>
+
+      {/* Desktop menu */}
+      <Flex display={{ base: "none", md: "flex" }} gap="1rem" align="center">
+        <NextLink href="/" passHref>
+          <Button
+            variant="ghost"
+            onClick={handleNavClick}
+            isActive={pathname === "/"}
+          >
+            Home
+          </Button>
+        </NextLink>
+        <NextLink href="/MyProjects" passHref>
+          <Button
+            variant="ghost"
+            onClick={handleNavClick}
+            isActive={pathname === "/MyProjects"}
+          >
+            Projects
+          </Button>
+        </NextLink>
+        <NextLink href="/AboutMe" passHref>
+          <Button
+            variant="ghost"
+            onClick={handleNavClick}
+            isActive={pathname === "/AboutMe"}
+          >
+            About Me
+          </Button>
+        </NextLink>
+        <Switch
+          colorScheme="green"
+          isChecked={isDark}
+          onChange={handleClick}
+        />
+      </Flex>
+
+      {/* Mobile menu button */}
+      <IconButton
+        aria-label="Toggle Menu"
+        icon={mobileMenuOpen ? <CloseIcon /> : <HamburgerIcon />}
+        display={{ base: "flex", md: "none" }}
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        bg="transparent"
+      />
+
+      {/* Mobile menu content */}
+      {mobileMenuOpen && (
+        <Box
+          position="fixed"
+          top="0"
+          left="0"
+          w="100%"
+          h="100vh"
+          bg={isDark ? "gray.800" : "gray.100"}
+          zIndex="90"
+          display="flex"
+          flexDir="column"
+          alignItems="center"
+          justifyContent="center"
+          gap="2rem"
         >
           <NextLink href="/" passHref>
             <Button
-              variant="white"
-              aria-label="Home"
-              my={1}
-              minW={14}>
+              variant="outline"
+              w="70%"
+              onClick={handleNavClick}
+              isActive={pathname === "/"}
+            >
               Home
             </Button>
           </NextLink>
-
           <NextLink href="/MyProjects" passHref>
             <Button
-              variant="white"
-              aria-label="MyProjects"
-              my={1}
-              minW={14}>
+              variant="outline"
+              w="70%"
+              onClick={handleNavClick}
+              isActive={pathname === "/MyProjects"}
+            >
               Projects
             </Button>
           </NextLink>
-
           <NextLink href="/AboutMe" passHref>
             <Button
-              variant="white"
-              aria-label="About Me"
-              my={1}
-              minW={14}>
+              variant="outline"
+              w="70%"
+              onClick={handleNavClick}
+              isActive={pathname === "/AboutMe"}
+            >
               About Me
             </Button>
           </NextLink>
           <Switch
-          color="green"
-          isChecked={isDark}
-          onChange={handleClick}
-          mr='2'
-          mt='0.85rem'
-          display={['none', 'none', vdarkMode, vdarkMode]}/>
-        </Flex>
-        {/* Mobile */}
-        <IconButton
-          aria-label="Open Menu"
-          size="lg"
-          mr={2}
-          bgColor='gray.400'
-          icon={
-            <HamburgerIcon  />
-          }
-          onClick={() => changeDisplay('flex')}
-          display={['flex', 'none', 'none', 'none']}
-        />
-      </Flex>
-      {/* Mobile Content */}
-      <Flex
-        w={vwidth}
-        display={display}
-        bgColor="gray.400"
-        zIndex={20}
-        h={vheight}
-        pos="fixed"
-        top="0"
-        left="0"
-        overflowY="auto"
-        flexDir="column">
-        <Flex justify="flex-end">
-          <IconButton
-            mt={2}
-            mr={2}
-            aria-label="Open Menu"
-            size="lg"
-            icon={
-              <CloseIcon />
-            }
-            onClick={() => changeDisplay('none')}
+            colorScheme="green"
+            isChecked={isDark}
+            onChange={handleClick}
           />
-        </Flex>
-
-        <Flex
-          flexDir="column"
-          align="center"
-          margin='auto'
-          w='80%'>
-          <NextLink href="/" passHref>
-            <Button
-              variant="outline"
-              aria-label="Home"
-              my={5}
-              w="100%"
-              colorScheme='white'>
-              Home
-            </Button>
-          </NextLink>
-
-          <NextLink href="/MyProjects" passHref>
-            <Button
-              variant="outline"
-              aria-label="MyProjects"
-              my={5}
-              w="100%"
-              colorScheme='white'>
-              My Projects
-            </Button>
-          </NextLink>
-
-          <NextLink href="/AboutMe" passHref>
-            <Button
-              variant="outline"
-              aria-label="Contact"
-              my={5}
-              w="100%"
-              colorScheme='white'>
-              About Me
-            </Button>
-          </NextLink>
-        </Flex>
-      </Flex>
+        </Box>
+      )}
     </Flex>
-  )
-}
+  );
+};

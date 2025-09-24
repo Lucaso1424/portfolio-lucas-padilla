@@ -233,8 +233,7 @@ export const Core = ({ position }: { position: number[] }) => {
       ref={groupRef}
       position={position as [number, number, number]}
       onPointerOver={() => setHovered(true)}
-      onPointerOut={() => setHovered(false)}
-    >
+      onPointerOut={() => setHovered(false)}>
       <mesh geometry={romboGeometry}>
         <meshStandardMaterial color="red" flatShading />
       </mesh>

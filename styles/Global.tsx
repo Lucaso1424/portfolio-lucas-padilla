@@ -37,4 +37,4 @@ export const GlobalCSS = {
     },
 }
 
-export default GlobalCSS
+export default GlobalCSS;

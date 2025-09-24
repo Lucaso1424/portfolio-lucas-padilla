@@ -45,7 +45,7 @@ export const MyProjectsContentPage = () => {
     return (
         <>
             <Box color='white' bgColor='gray.900'>
-                <Navbar height={''} width={''} top={''} darkMode={'true'} />
+                <Navbar></Navbar>
                 <Divider mt='1rem'/>
             </Box>
             <ProjectCard data={firstCard}/>

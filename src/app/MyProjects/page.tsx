@@ -28,5 +28,5 @@ export default function MyProjectsPage() {
             </Canvas>
             <MyProjectsContentPage />
         </div>
-    )
+    );
 }

@@ -29,6 +29,8 @@ export {
     SimpleGrid,
     Accordion,
     AccordionItem,
+    Wrap,
+    WrapItem,
     Divider,
     useColorMode,
     useDisclosure,

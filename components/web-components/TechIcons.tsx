@@ -3,8 +3,6 @@ export {
     SiJavascript as JsIcon,
     SiReact as ReactIcon,
     SiDotnet as CNetIcon,
-    SiGnubash as BashIcon,
-    SiDocker as DockerIcon,
     SiHtml5 as HtmlIcon,
     SiKotlin as KotlinIcon,
     SiMysql as SqlIcon,
